@@ -39,7 +39,6 @@ describe("Question 1: ", () => {
 describe("Question 2: ", () => {
     test("Declare and assign variable.", () => {
         const fnString = question02.toString();
-        console.log = jest.fn();
 
         question02();
 
@@ -48,7 +47,6 @@ describe("Question 2: ", () => {
 
     test("Reassign variable.", () => {
         const fnString = question02.toString();
-        console.log = jest.fn();
 
         question02();
 
@@ -71,7 +69,6 @@ describe("Question 2: ", () => {
 describe("Question 3: ", () => {
     test("Declare and assign values to 'a' and 'b'.", () => {
         const fnString = question03.toString();
-        console.log = jest.fn();
 
         question03();
         expect(fnString).toMatch(/let a\s*=\s*2\s*;/);
@@ -88,18 +85,31 @@ describe("Question 3: ", () => {
     });
 
     test("Declare multiply and display.", () => {
-        try {
             const fnString = question03.toString();
             console.log = jest.fn();
 
             question03();
             expect(fnString).toMatch(/let .*\s*=\s*[ab]+\s*\*\s*[ab]+\s*;/);
             expect(console.log.mock.calls[1][0]).toBe(18);
-        } catch (error) {
-            console.log(error);
-        }
-
     });
+
+    test("Declare power of and display.", () => {
+            const fnString = question03.toString();
+            console.log = jest.fn();
+
+            question03();
+            expect(fnString).toMatch(/let .*\s*=\s*a\s*[\*\*]\s*\*\s*b+\s*;/);
+            expect(console.log.mock.calls[2][0]).toBe(512);
+    });
+
+    test("Declare modulo and display.", () => {
+        const fnString = question03.toString();
+        console.log = jest.fn();
+
+        question03();
+        expect(fnString).toMatch(/let .*\s*=\s*[a]+\s*\%\s*[b]+\s*;/);
+        expect(console.log.mock.calls[3][0]).toBe(2);
+});
     console.log(`\n`);
 })
 

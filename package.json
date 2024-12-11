@@ -4,7 +4,7 @@
   "description": "Practice questions for JavaScript",
   "main": "01-question.js",
   "scripts": {
-    "test": "jest --silent"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",

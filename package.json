@@ -1,0 +1,14 @@
+{
+  "name": "20241203-js-practice-1",
+  "version": "1.0.0",
+  "description": "Practice questions for JavaScript",
+  "main": "01-question.js",
+  "scripts": {
+    "test": "jest --silent"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
